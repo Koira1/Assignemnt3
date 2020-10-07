@@ -116,7 +116,7 @@ function luoPoyta() {
       laskuri++;
       lokero.className = "col s1";
       console.log(lokero);
-      lokero.innerHTML = "x";
+      lokero.innerHTML = "|";
       rivi.appendChild(lokero);
     }
   }
