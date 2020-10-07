@@ -102,7 +102,7 @@ function checkWinner(player) {
 }
 
 function luoPoyta() {
-  var poyta = document.getElementById("board");
+  var poyta = document.getElementById("123");
   var size = 5;
   var laskuri = 0;
   for (var i = 0; i < size; i++) {
