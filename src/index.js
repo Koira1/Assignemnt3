@@ -1,6 +1,11 @@
 import "./styles.css";
 
-if (document.readyState != "loading") {
+var div = document.getElementById("123");
+var playerTurn = 0;
+var playArray = [];
+var id;
+
+if (document.readyState !== "loading") {
   initializeCode();
 } else {
   document.addEventListener("DOMContentLoaded", function () {
@@ -23,9 +28,6 @@ function initializeCode() {
   }
 }
 
-var playerTurn = 0;
-var playArray = [];
-var id = startTimer();
 function startTimer() {
   var width = 100;
   if (width > 0) {
