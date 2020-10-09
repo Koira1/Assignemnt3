@@ -1,8 +1,28 @@
 import "./styles.css";
 
-luoPoyta();
+if (document.readyState != "loading") {
+  initializeCode();
+} else {
+  document.addEventListener("DOMContentLoaded", function () {
+    initializeCode();
+  });
+}
 
-var div = document.getElementById("board");
+function initializeCode() {
+  luoPoyta();
+  id = startTimer();
+  var rows = document.getElementsByClassName("row");
+  for (var i = 0; i < rows.length; i++) {
+    rows[i].addEventListener(
+      "click",
+      function (e) {
+        onClickTable(e);
+      },
+      false
+    );
+  }
+}
+
 var playerTurn = 0;
 var playArray = [];
 var id = startTimer();
@@ -120,15 +140,4 @@ function luoPoyta() {
       rivi.appendChild(lokero);
     }
   }
-}
-
-var rows = document.getElementsByClassName("row");
-for (var i = 0; i < rows.length; i++) {
-  rows[i].addEventListener(
-    "click",
-    function (e) {
-      onClickTable(e);
-    },
-    false
-  );
 }
